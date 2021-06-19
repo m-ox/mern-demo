@@ -78,7 +78,7 @@ router.patch('/:id', async (req, res) => {
         }
 
         updatedUser = await User.findByIdAndUpdate(
-                { id: req.params.id },
+                { _id: req.params.id },
                 { username: req.body.username }
         )
 
