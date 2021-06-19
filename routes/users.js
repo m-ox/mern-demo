@@ -67,7 +67,7 @@ router.post('/',
         }  
 })
 
-//PUT /:id
+//PATCH /:id
 // update the username's name
 router.patch('/:id', async (req, res) => {
     try {
@@ -78,7 +78,7 @@ router.patch('/:id', async (req, res) => {
         }
 
         updatedUser = await User.findByIdAndUpdate(
-                { _id: req.params.id },
+                { id: req.params.id },
                 { username: req.body.username }
         )
 

@@ -102,7 +102,7 @@ export default class UsernameList extends Component {
 
     try {
       const modifyUser = {
-        userInput: this.state.userInput
+        "username": this.state.userInput
       }
       const config = {
         headers: {
@@ -112,6 +112,7 @@ export default class UsernameList extends Component {
       const body = JSON.stringify(modifyUser)
 
       console.log('who we are updating:', this.state.userID, 'what the new username is:', modifyUser)
+      console.log('body:', body)
 
       const res = await axios.patch(`http://localhost:5000/users/${this.state.userID}`, body, config)
 
