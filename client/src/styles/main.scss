@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+.page-wrapper {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+    
+    .username-wrapper {
+        background: rgb(145, 200, 218);
+        background: linear-gradient(0deg, #79c3f8 0%, #a1caf5 35%, #a9bfe5 100%);
+        box-shadow: inset -6px -7px 12px 0px #6aacfe;
+        border-radius: 15px;
+        border-radius: 15px;
+        width: 500px;
+
+        .username-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .username {
+                margin: 2px 0;
+                background: rgba(255, 255, 255, 0.122);
+                border-radius: 2px;
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: .5s;
+
+                &:hover {
+                    background: rgba(154, 179, 223, 0.435);
+                    cursor: pointer;
+                }
+    
+            }
+        }
+    }
+
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1em;
+
+        input {
+            padding: 10px 15px;
+            border: unset;
+            border-radius: 5px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: .6em;
+            color: #2f72c2;
+            text-align: center;
+            width: 85%;
+
+            &:focus-visible {
+                outline-color: rgb(132, 166, 226);
+            }
+        }
+    }
+
+    .button-input-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: .6em;
+        padding: 0 2em 2em 2em;
+
+        .user-button {
+            all: unset;
+            width: 33%;
+            height: 40px;
+            background: rgba(205, 205, 253, 0.435);
+            border-radius: 15px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: .5s;
+
+            &:hover {
+                background: rgba(154, 154, 223, 0.435);
+                cursor: pointer;
+            }
+        }
+    }
+}
