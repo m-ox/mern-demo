@@ -57,7 +57,8 @@ export default class UsernameList extends Component {
       this.setState({
         userInput: e.username,
         userID: e._id,
-        moddedUser: e.username
+        moddedUser: e.username,
+        box: 'black'
       })
       console.log('the user:', this.state.userInput, 'the id:', this.state.userID)
     }
@@ -84,7 +85,8 @@ export default class UsernameList extends Component {
           console.log(res.data)
           this.loadList()
           this.setState({
-            userInput: "User added!"
+            userInput: "User added!",
+            box: 'green'
           })
   
         } catch(err) {
@@ -92,7 +94,8 @@ export default class UsernameList extends Component {
         }
       } else {
         this.setState({
-          userInput: 'Not enough characters!'
+          userInput: 'Not enough characters!',
+          box: 'red'
         })
       }       
     }
@@ -119,7 +122,8 @@ export default class UsernameList extends Component {
       console.log(res.data)
       this.loadList()
       this.setState({
-        userInput: "User updated!"
+        userInput: "User updated!",
+        box: 'green'
       })
 
     } catch(err) {
@@ -142,7 +146,8 @@ export default class UsernameList extends Component {
         console.log(res.data)
         this.loadList()
         this.setState({
-          userInput: "User deleted!"
+          userInput: "User deleted!",
+          box: 'red'
         })
 
     } catch(err) {
@@ -154,7 +159,7 @@ export default class UsernameList extends Component {
   render() {
     const usernames = this.state.users.map(user => {
       return (
-        <div key={user._id} onClick={() => this.handleUserClick(user)} className='username'>
+        <div key={user._id} onClick={() => this.handleUserClick(user)} className={`username ${this.state.box}`}>
           {user.username}
         </div>
       )
@@ -168,13 +173,18 @@ export default class UsernameList extends Component {
 
             
                 
-                    <div className='input-wrapper'>
+                    <div className={`input-wrapper ${this.state.box}`}>
                         <input
                           type="text"
                           name="userInput"
                           placeholder="Username"
                           value={this.state.userInput}
                           onChange={this.handleChange}
+                          onClick={() =>
+                            this.setState({
+                              box: 'rgb(59, 59, 59))'
+                            })
+                          }
                         />
                     </div>
                     
