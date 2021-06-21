@@ -182,7 +182,8 @@ export default class UsernameList extends Component {
                           onChange={this.handleChange}
                           onClick={() =>
                             this.setState({
-                              box: 'rgb(59, 59, 59))'
+                              box: 'rgb(59, 59, 59))',
+                              userInput: ''
                             })
                           }
                         />
